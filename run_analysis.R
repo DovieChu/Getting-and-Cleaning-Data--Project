@@ -43,7 +43,6 @@ colnames(YTrain)<-"Activities"
 
 trainData <- cbind(subjectTrain,YTrain,XTrain)
 
-##merge all data together
 sportsDataTotal <- rbind(testData,trainData)
 
 ##################  Step2  ##########################
@@ -67,12 +66,16 @@ sportsData$Activities <- factor(actFac,levels=as.character(actLabels[ ,2]))
 namesOriginal <- names(sportsData)
 
 namesNew <- gsub("BodyBody","Body",namesOriginal)
-namesNew <- gsub("[(.*)]","",namesNew)  #delete"()"
+namesNew <- gsub("[(.*)]","",namesNew)
 namesNew <- gsub("-","",namesNew)
-namesNew <- gsub("mean","-Mean",namesNew)
+namesNew <- gsub(",","",namesNew)
 namesNew <- gsub("Mean","-Mean",namesNew)
+namesNew <- gsub("mean","-Mean",namesNew)
 namesNew <- gsub("std","-Std",namesNew)
-namesNew <- gsub("Mag","Magnitude",namesNew)
+namesNew <- gsub("angle","angle-",namesNew)
+namesNew <- gsub("X","-X",namesNew)
+namesNew <- gsub("Y","-Y",namesNew)
+namesNew <- gsub("Z","-Z",namesNew)
 
 colnames(sportsData) <- namesNew
 
