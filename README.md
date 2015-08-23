@@ -49,10 +49,6 @@ The changes are:
   delete all ","
   replace "mean" by "-Mean"
   replace "std" by "-Std"
-  replace "Mag" by "Magnitude"
-  replace "Acc" by "Acceleration"
-  replace "Gyro" by "Gyration"
-  replace "angel" by "angle-"
   replace "t" by "time-"
   replace "f" by "freqency-"
 
